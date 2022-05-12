@@ -61,8 +61,6 @@ function addtoBasket() {
   let title = document.getElementById("title").textContent;
   let quantity = document.getElementById("quantity").value;
   let price = document.getElementById("price").textContent;
-  //let image = value.imageUrl;
-  //let altTxt = value.altTxt;
   console.log("produit =", idProduct);
   let basket = getBasket();
   let foundProduct = basket.find(el => el && el.id == idProduct && el.color == color);
