@@ -90,4 +90,6 @@ function totalPrice() {
 
 totalPrice();
 
+
+
 //NE PAS OUBLIER PHOTO VERIFIER HTML CART !!

@@ -1,14 +1,3 @@
-let xhr = new XMLHttpRequest();
-xhr.open('POST', 'http://localhost:3000/api/products/order');
-xhr.onreadystatechange = function() {
-  if (xhr.readyState === 4) {
-    alert(xhr.responseText);
-  }
-};
-
-// envoi d'une chaine de caractères:
-xhr.send(order);
-
 const order = {
     "products" : [],
     "contact":{
@@ -20,7 +9,19 @@ const order = {
     }
 }
 
-console.log(order);
+console.log(JSON.stringify (order));
+
+let xhr = new XMLHttpRequest();
+xhr.open('POST', 'http://localhost:3000/api/products/order');
+xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+xhr.onreadystatechange = function() {
+  if (xhr.readyState === 4) {
+    alert(xhr.responseText);
+  }
+};
+
+// envoi d'une chaine de caractères:
+xhr.send(JSON.stringify(order));
 
 
 /*contact: {
