@@ -1,5 +1,8 @@
+let basket = localStorage.basket;
+
+
 const order = {
-    "products" : [],
+    "products" : basket,
     "contact":{
         "firstName":"ANEEZA",
         "lastName":"ALI",
@@ -9,14 +12,14 @@ const order = {
     }
 }
 
-console.log(JSON.stringify (order));
+console.log(order);
 
 let xhr = new XMLHttpRequest();
 xhr.open('POST', 'http://localhost:3000/api/products/order');
 xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 xhr.onreadystatechange = function() {
   if (xhr.readyState === 4) {
-    alert(xhr.responseText);
+    console.log(xhr.responseText);
   }
 };
 
