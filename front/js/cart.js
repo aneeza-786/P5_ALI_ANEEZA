@@ -91,5 +91,13 @@ function totalPrice() {
 totalPrice();
 
 
-
-//NE PAS OUBLIER PHOTO VERIFIER HTML CART !!
+function saveFormData() {
+  const contact = {
+  firstName : document.getElementById('firstName').value,
+  lastName : document.getElementById('lastName').value,
+  address : document.getElementById('address').value,
+  city : document.getElementById('city').value,
+  email : document.getElementById('email').value
+}
+  localStorage.setItem("contact", JSON.stringify(contact));
+}
